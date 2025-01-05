@@ -631,7 +631,7 @@ let experiment_configuration_function = (writer) => {
         ],
 
         pre_run_training_instructions: writer.string_page_command(
-            "You entered the training phase. In the training phase, you get a random set of tasks, either with method calls that have good names or method calls with bad names.<br><br>" +
+            "You entered the training phase. In the training phase, you get a random set of tasks, either with method calls that have good names or method calls with bad names or code without any method calls.<br><br>" +
             "<b>To avoid the need for scrolling, please adjust your browser's zoom level to at least 70% and conduct the experiment in full screen mode ([F11])</b>.<br><br>" +
             "Please, run the training until you feel familiar with the experiment. This could be - for example - the case when you correctly answered the tasks 10 times.<br><br>" +
             "You can interrupt the training phase by pressing [ESC]. Otherwise, the training phase will be repeated.<br><br>" +
@@ -667,6 +667,7 @@ let experiment_configuration_function = (writer) => {
             Nof1.alternatives("impression", "What statement describes " +
                 "                       best your impression \n\ of the experiment?", [
                 "I do not think that there was a difference between the good identifiers and the bad ones",
+                "The code without any method calls was much difficult than those with method calls",
                 "The method names with the return value of the method made it easier for me",
             ])
         ],
