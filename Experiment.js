@@ -631,7 +631,7 @@ let experiment_configuration_function = (writer) => {
         ],
 
         pre_run_training_instructions: writer.string_page_command(
-            "You entered the training phase. In the training phase, you get a random set of tasks, either with method calls that have good names or method calls with bad names or code without any method calls.<br><br>" +
+            "You entered the training phase. In the training phase, you get a random set of tasks, either with method calls that have good names or method calls with bad names.<br><br>" +
             "<b>To avoid the need for scrolling, please adjust your browser's zoom level to at least 70% and conduct the experiment in full screen mode ([F11])</b>.<br><br>" +
             "Please, run the training until you feel familiar with the experiment. This could be - for example - the case when you correctly answered the tasks 10 times.<br><br>" +
             "You can interrupt the training phase by pressing [ESC]. Otherwise, the training phase will be repeated.<br><br>" +
@@ -667,7 +667,6 @@ let experiment_configuration_function = (writer) => {
             Nof1.alternatives("impression", "What statement describes " +
                 "                       best your impression \n\ of the experiment?", [
                 "I do not think that there was a difference between the good identifiers and the bad ones",
-                "The code without any method calls was much difficult than those with method calls",
                 "The method names with the return value of the method made it easier for me",
             ])
         ],
@@ -857,7 +856,7 @@ let experiment_configuration_function = (writer) => {
 
 
 
-                    t.expected_answer_2 = read_Good.correctAnswer;
+                    t.expected_answer = read_Good.correctAnswer;
 
                     //Empty the arrays after each task
                     test_arr = [];
@@ -916,13 +915,13 @@ let experiment_configuration_function = (writer) => {
                         "Press [Enter] to go on. "));
                 }
                 else{
-                    if(t.given_answer == t.expected_answer_2){
+                    if(t.given_answer == t.expected_answer){
                         writer.print_html_on_stage("Correct! This right answer is " + t.given_answer + ".")
                         console.log("Given Answer If: " + t.given_answer)
                     }
                     else{
                         writer.print_html_on_stage("Incorrect! Your input was " + t.given_answer + ".")
-                        writer.print_html_on_stage("The right answer is "+ t.expected_answer_2 +". It is the output of the function " +  t.final_method_call + "." + "\n\n");
+                        writer.print_html_on_stage("The right answer is "+ t.expected_answer +". It is the output of the function " +  t.final_method_call + "." + "\n\n");
                     }
 
                     writer.print_string_on_stage(writer.convert_string_to_html_string(
