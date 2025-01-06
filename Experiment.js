@@ -783,6 +783,7 @@ let experiment_configuration_function = (writer) => {
                     generated_if_else_structures = []
 
                     writer.print_html_on_stage(tableHTML);
+                
                 }
                 else {
                     console.log("Treatment 4??: ", t.treatment_value("Identifier"));
@@ -885,6 +886,7 @@ let experiment_configuration_function = (writer) => {
 
 
                     writer.print_html_on_stage(tableHTML);
+                  
                 }
 
             };
